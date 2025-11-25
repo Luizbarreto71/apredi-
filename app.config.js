@@ -1,0 +1,50 @@
+import "dotenv/config";
+
+export default {
+  expo: {
+    name: "AprendaPlus",
+    slug: "aprenda-plus",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/logo/icon.png",
+    userInterfaceStyle: "light",
+
+    splash: {
+      image: "./assets/logo/splash.png",
+      resizeMode: "contain",
+      backgroundColor: "#ffffff",
+    },
+
+    assetBundlePatterns: ["**/*"],
+
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: "com.aprendaplus.app",
+    },
+
+    android: {
+      adaptiveIcon: {
+        foregroundImage: "./assets/logo/adaptive-icon.png",
+        backgroundColor: "#ffffff",
+      },
+      package: "com.aprendaplus.app",
+    },
+
+    web: {
+      favicon: "./assets/logo/favicon.png",
+    },
+
+    scheme: "aprendaplus",
+
+    plugins: ["expo-router"],
+
+    extra: {
+      supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
+      supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
+      eas: {
+        projectId: "aprendaplus-generated-id",
+      },
+    },
+  },
+};
+
